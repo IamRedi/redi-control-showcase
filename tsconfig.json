@@ -1,0 +1,25 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/config" },
+    { "path": "./packages/core" },
+    { "path": "./packages/connector-sdk" },
+    { "path": "./packages/database" },
+    { "path": "./packages/identity" },
+    { "path": "./packages/installation" },
+    { "path": "./packages/media-social" },
+    { "path": "./packages/modules" },
+    { "path": "./packages/ui" },
+    { "path": "./packages/website-control" },
+    { "path": "./packages/unified-content" },
+    { "path": "./packages/media-intelligence" },
+    { "path": "./packages/video-intelligence" },
+    { "path": "./packages/source-ingestion" },
+    { "path": "./packages/ai-gateway" },
+    { "path": "./packages/evidence-intelligence" },
+    { "path": "./apps/api" },
+    { "path": "./apps/storage" },
+    { "path": "./apps/worker" },
+    { "path": "./apps/web" }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+	admin off
+}
+
+# Origin-only profile for a separately managed HTTPS tunnel or reverse proxy.
+# Bind Compose to 127.0.0.1 and require the ingress to preserve the exact Host.
+http://{$REDI_DOMAIN} {
+	encode zstd gzip
+
+	header {
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		-Server
+	}
+
+	@identity path /id /id/*
+	reverse_proxy @identity keycloak:8080 {
+		header_up X-Forwarded-Proto https
+	}
+
+	@control path /api/* /auth/* /health/*
+	reverse_proxy @control api:3001
+	reverse_proxy web:3000
+
+	log {
+		output stdout
+		format json
+	}
+}
+
+:80 {
+	respond 421
+}

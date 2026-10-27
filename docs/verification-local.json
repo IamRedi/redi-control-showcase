@@ -1,0 +1,62 @@
+{
+  "source_commit": "3816fb4757596a7e5cae7913734dc4d36969ec5d",
+  "verified_at": "2026-10-27T22:58:18.461685+00:00",
+  "node": "22.23.4",
+  "postgresql": "17.11",
+  "postgresql_package_sha256": "d5b58058a82a3f344f832aea2cc54badc4f6265c25c960752cb1f5df5d2180ee",
+  "unit": {
+    "passed": 159,
+    "files": 37
+  },
+  "integration": {
+    "passed": 101,
+    "files": 15
+  },
+  "format": "passed",
+  "typecheck": "passed",
+  "lint": "passed",
+  "build": "passed",
+  "npm_audit_vulnerabilities": 0,
+  "offline_transport_checks": 3,
+  "browser": {
+    "capturedAt": "2026-10-27T22:54:58.076Z",
+    "routes": [
+      "/sq/showcase",
+      "/sq/research",
+      "/sq/content",
+      "/sq/social/composer",
+      "/sq/social/review",
+      "/sq/social/calendar",
+      "/sq/social/preflight",
+      "/sq/people",
+      "/sq/workzone/board"
+    ],
+    "externalRequests": [],
+    "providerCalls": 0,
+    "unexpectedWrites": [],
+    "localSocialAdapter": "deterministic_local",
+    "productionBuildVerified": "khO2pXiFE4SfXwx5NJZnI",
+    "runtime": "Local development web server; production BFF HTTPS policy is unchanged",
+    "anonymousDashboardStatus": 401,
+    "usedTokenReplayStatus": 403
+  },
+  "production_compose_and_tunnel_contracts": "passed (Windows Node 22.19.0 / Compose config only; no services started)",
+  "docker_container_builds": "not run locally: Docker Desktop engine unavailable; configured in CI",
+  "remote_ci": "Read the actual GitHub Actions result; local checks are not remote CI.",
+  "real_provider_calls": 0,
+  "real_publications": 0,
+  "logs": [
+    {
+      "name": "rc-verified-final.log",
+      "sha256": "3cfef7551c269ddc1b6de2c5975603c77908b3a8f0dcf86ea99bd508dd791c49"
+    },
+    {
+      "name": "rc-production-contract.log",
+      "sha256": "414e369f37b38c9f556d11824ddf769638d6faa71d2895f18e9bd92a232f0b8a"
+    },
+    {
+      "name": "rc-browser-acceptance.log",
+      "sha256": "8b2c87690dcf4f7f69c77f059bca424d70b24eef57e39db32d90d391d0bf0ea8"
+    }
+  ]
+}

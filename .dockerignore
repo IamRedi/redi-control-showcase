@@ -1,0 +1,13 @@
+.git
+.env*
+!.env.example
+node_modules
+**/node_modules
+**/dist
+**/.next
+**/*.tsbuildinfo
+coverage
+.local
+redi_control_codex_starter_pack
+/deploy/cloudflare-tunnel
+/deploy/production/secrets

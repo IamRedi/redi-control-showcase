@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": { "rootDir": "src", "outDir": "dist" },
+  "references": [
+    { "path": "../../packages/config" },
+    { "path": "../../packages/database" },
+    { "path": "../../packages/connector-sdk" },
+    { "path": "../../packages/source-ingestion" }
+  ],
+  "include": ["src/**/*.ts"]
+}

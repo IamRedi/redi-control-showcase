@@ -1,0 +1,13 @@
+[Unit]
+Description=REDI CONTROL encrypted PostgreSQL backup
+Requires=docker.service
+After=docker.service network-online.target redi-control.service
+Wants=network-online.target
+OnFailure=redi-control-email-alert@%n.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=@DEPLOYMENT_DIRECTORY@
+LoadCredentialEncrypted=backup_gpg_passphrase:/etc/credstore.encrypted/backup_gpg_passphrase
+Environment=REDI_BACKUP_GPG_PASSPHRASE_FILE=%d/backup_gpg_passphrase
+ExecStart="@DEPLOYMENT_DIRECTORY@/backup-postgres-encrypted.sh"

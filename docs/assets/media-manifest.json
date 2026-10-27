@@ -1,0 +1,208 @@
+{
+  "source_commit": "3816fb4757596a7e5cae7913734dc4d36969ec5d",
+  "captured_at": "2026-10-27T22:54:58.076Z",
+  "review_state": "DRAFT_OWNER_REVIEW",
+  "environment": "isolated loopback web/API/storage, PostgreSQL 17.11, synthetic Aurora Media fixture",
+  "ui_language": "sq",
+  "captions": ["de", "en"],
+  "real_provider_calls": 0,
+  "real_publications": 0,
+  "private_pilot_media": 0,
+  "video_method": "silent captioned montage of nine actual application screenshots",
+  "media": [
+    {
+      "path": "docs/assets/hero.png",
+      "sha256": "bd0d2f1503c40394cc6787b4ae8fde4e4bcae8fae795c519e5f1a47e69785e99",
+      "bytes": 469612,
+      "width": 1800,
+      "height": 1060
+    },
+    {
+      "path": "docs/assets/screenshots/calendar.png",
+      "sha256": "f93c05952f99face256f97f142c66f8377351446bc17e06639f3f3cd58e0939a",
+      "bytes": 649608,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/calendar.webp",
+      "sha256": "87aacceb946547a6608ea1890f0ea6283f9bc70ea8b0e783dda891289d1be3d3",
+      "bytes": 80440,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/composer.png",
+      "sha256": "488cb5958d37f3fef10aad7260d0029b4423f837d86deae3bd158f2ee80c2a2f",
+      "bytes": 545067,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/composer.webp",
+      "sha256": "bd364045cdb1fe9055cb8ab096b9957e81d3b1d3f229cf5e65a77c1898802966",
+      "bytes": 67992,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/content.png",
+      "sha256": "3f38f5da736d8c1d0f0e31e2caaf3c10d5e49482aab1d39b51df8fbd618b4d8b",
+      "bytes": 309003,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/content.webp",
+      "sha256": "149732a21b93b4e9c225e8f8e6cbd39ea030d2f172522ef33cc08a472edb4a86",
+      "bytes": 87480,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/mobile-showcase.png",
+      "sha256": "2ebb61fb35b4442aa50fdb269069e7b126adf873837c2346bce69a1f75cf2525",
+      "bytes": 198115,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "docs/assets/screenshots/mobile-showcase.webp",
+      "sha256": "a01fe7ec64cfa06d0ab4f56c4c1be0c4d6fa68f504d703f64fd4c5199848260d",
+      "bytes": 41400,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "docs/assets/screenshots/newsroom.png",
+      "sha256": "d8c5b43fc7ada34573f66ad4e8fd9482fa9d1cfd828a5c529bc3b96a077818b4",
+      "bytes": 289365,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/newsroom.webp",
+      "sha256": "ded27b265e1fd10e4f667bfcb8325bc40a490606471623c960fa56012c72ee0e",
+      "bytes": 85348,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/people.png",
+      "sha256": "ff0f25439e17eb93cc4873c8497cf24aa4fae477f607f9351d6bb6f03694286a",
+      "bytes": 243182,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/people.webp",
+      "sha256": "c247f63d86216390842ad823247c227a1750131a9fc491855e9a3090ee541e94",
+      "bytes": 64658,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/preflight.png",
+      "sha256": "4c70dabf7edcb0b790b09f75e40192f91349df9d568850f96e8092f1d54e8724",
+      "bytes": 578315,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/preflight.webp",
+      "sha256": "fe2dcda6027ea40edb5a2f77c60eea7b67e1657c2a3e9e0575acbb334b80f2d4",
+      "bytes": 107104,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/review.png",
+      "sha256": "4fbc395e27e2fd8bda0f2a590da0a44a4cdb4325d7256a563a87e385662a5a46",
+      "bytes": 674567,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/review.webp",
+      "sha256": "d28f021c1ebd01af8b756da54a795d85b5697fc504a581cf1c4348fd6f95fe7b",
+      "bytes": 93772,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/showcase.png",
+      "sha256": "29e8b14fe5e2ed12493c08a3ca3dcd9adf6f253d8a4e2d60ccb2ebb26ed0cadc",
+      "bytes": 664634,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/showcase.webp",
+      "sha256": "fa9a72a74b72296ace439d4eed354e195594f307342d118656cdaf764fcd5229",
+      "bytes": 84832,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/workboard.png",
+      "sha256": "76239f62f2ccb10dd791f0760581718469c76c4b30a7875f5414863efce8b9d2",
+      "bytes": 411252,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/screenshots/workboard.webp",
+      "sha256": "db509bad1dbf5c7d3d6e80fc492a743bb2bfcecb21e349cbd55b3b9da71b6763",
+      "bytes": 96868,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "docs/assets/social-preview.png",
+      "sha256": "25c6ee40738859ba7e9d17611e1463998845247d29b11e8f778c09530160a25f",
+      "bytes": 211068,
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "path": "docs/assets/video/transcript.md",
+      "sha256": "61edaa387380e7b873eedf23ce303d65044adc5b7e2891dda287184ef5f53806",
+      "bytes": 1504
+    },
+    {
+      "path": "docs/assets/video/walkthrough-de.mp4",
+      "sha256": "43e032cd29445ddeea657cd47bd9f849790fc812048c578e33a09ed084f93d27",
+      "bytes": 1160711,
+      "width": 1920,
+      "height": 1080,
+      "duration_seconds": 45,
+      "audio": false
+    },
+    {
+      "path": "docs/assets/video/walkthrough-de.srt",
+      "sha256": "549fd242488675976f33c42d4a44fbde326f291dbaa85743884ea1ba90ecbb69",
+      "bytes": 720
+    },
+    {
+      "path": "docs/assets/video/walkthrough-en.mp4",
+      "sha256": "5a9e074bbf1b1e5478d86bc549446da636d3962c801ae56c522d88457e5a433c",
+      "bytes": 1158068,
+      "width": 1920,
+      "height": 1080,
+      "duration_seconds": 45,
+      "audio": false
+    },
+    {
+      "path": "docs/assets/video/walkthrough-en.srt",
+      "sha256": "bfd4b2a78649a4a75e04ae461473c37a335be34efc5a6e59bdfb3fbf9f0eb96f",
+      "bytes": 703
+    },
+    {
+      "path": "docs/assets/video/walkthrough-preview.webp",
+      "sha256": "001bcd6dbbd1439d539a2ea31c7f046261d1cb17d00690726ada318b5140434d",
+      "bytes": 142452,
+      "width": 800,
+      "height": 450
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-20T14:30:00.000Z",
+  "freshnessWindowHours": 48,
+  "stories": [
+    {
+      "key": "nasa-moon-microbes",
+      "category": "Shkencë & E Ardhmja",
+      "title": "Human-Related Microbes May Survive Moon’s South Pole, NASA Finds",
+      "url": "https://science.nasa.gov/humans-in-space/human-related-microbes-may-survive-moons-south-pole-nasa-finds/",
+      "publishedAt": "2026-08-19T18:02:40.000Z",
+      "publisher": "NASA",
+      "sourceTier": "primary"
+    },
+    {
+      "key": "nasa-swift-boost",
+      "category": "Shkencë & E Ardhmja",
+      "title": "NASA Updates Next Steps for Commercial Swift Boost Mission",
+      "url": "https://www.nasa.gov/news-release/nasa-updates-next-steps-for-commercial-swift-boost-mission/",
+      "publishedAt": "2026-08-19T18:08:25.000Z",
+      "publisher": "NASA",
+      "sourceTier": "primary"
+    },
+    {
+      "key": "nasa-orbital-clarity",
+      "category": "Teknologji & AI",
+      "title": "NASA TechLeap Prize: Orbital Clarity Challenge",
+      "url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-techleap-prize-orbital-clarity-challenge/",
+      "publishedAt": "2026-08-19T19:57:48.000Z",
+      "publisher": "NASA",
+      "sourceTier": "primary"
+    },
+    {
+      "key": "nasa-apod-elephant-trunk",
+      "category": "A e dije?",
+      "title": "APOD: 2026 August 20 – The Elephant’s Trunk in Cepheus",
+      "url": "https://science.nasa.gov/image-article/apod/apod-2026-august-20-the-elephants-trunk-in-cepheus/",
+      "publishedAt": "2026-08-20T04:05:00.000Z",
+      "publisher": "NASA",
+      "sourceTier": "primary"
+    },
+    {
+      "key": "techcrunch-alation-cyberattack",
+      "category": "Teknologji & AI",
+      "title": "AI data giant Alation confirms cyberattack",
+      "url": "https://techcrunch.com/2026/08/20/ai-data-giant-alation-confirms-cyberattack/",
+      "publishedAt": "2026-08-20T13:01:24.000Z",
+      "publisher": "TechCrunch",
+      "sourceTier": "strong_reporting"
+    },
+    {
+      "key": "techcrunch-water-systems-ai",
+      "category": "Teknologji & AI",
+      "title": "US says hackers are targeting vulnerable water systems with the help of AI",
+      "url": "https://techcrunch.com/2026/08/20/us-says-hackers-are-targeting-vulnerable-water-systems-with-the-help-of-ai/",
+      "publishedAt": "2026-08-20T12:43:19.000Z",
+      "publisher": "TechCrunch",
+      "sourceTier": "strong_reporting"
+    },
+    {
+      "key": "techcrunch-nuclear-power",
+      "category": "Shkencë & E Ardhmja",
+      "title": "Apollo Atomics wants to make nuclear power cheaper by shrinking an overlooked part",
+      "url": "https://techcrunch.com/2026/08/20/apollo-atomics-wants-to-make-nuclear-power-cheaper-by-shrinking-an-overlooked-part/",
+      "publishedAt": "2026-08-20T13:45:00.000Z",
+      "publisher": "TechCrunch",
+      "sourceTier": "strong_reporting"
+    },
+    {
+      "key": "bbc-kyiv-air-defence",
+      "category": "Botë",
+      "title": "At least 15 killed in Kyiv as Ukraine grapples with air defence shortages",
+      "url": "https://www.bbc.co.uk/news/articles/c98vzmden5yo",
+      "publishedAt": "2026-08-20T13:56:25.000Z",
+      "publisher": "BBC News",
+      "sourceTier": "strong_reporting"
+    },
+    {
+      "key": "bbc-evergrande-sentence",
+      "category": "Botë",
+      "title": "Founder of collapsed Chinese property giant Evergrande sentenced to life in prison",
+      "url": "https://www.bbc.co.uk/news/articles/cd0x9mjjmgjo",
+      "publishedAt": "2026-08-20T06:08:02.000Z",
+      "publisher": "BBC News",
+      "sourceTier": "strong_reporting"
+    },
+    {
+      "key": "aljazeera-kosovo-mass-graves",
+      "category": "Aktualitet Shqipëri/Kosovë",
+      "title": "Kosovo finds remains of 23 people in mass graves search",
+      "url": "https://www.aljazeera.com/news/2026/8/20/kosovo-finds-remains-of-23-people-in-mass-graves-search",
+      "publishedAt": "2026-08-20T06:05:07.000Z",
+      "publisher": "Al Jazeera",
+      "sourceTier": "strong_reporting"
+    },
+    {
+      "key": "aljazeera-us-debt",
+      "category": "Botë",
+      "title": "US debt hits $40 trillion: Who does Washington owe and why does it matter?",
+      "url": "https://www.aljazeera.com/economy/2026/8/20/us-debt-hits-40-trillion-who-does-washington-owe-and-why-does-it-matter",
+      "publishedAt": "2026-08-20T13:18:31.000Z",
+      "publisher": "Al Jazeera",
+      "sourceTier": "strong_reporting"
+    }
+  ]
+}

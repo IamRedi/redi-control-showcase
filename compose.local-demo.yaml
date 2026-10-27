@@ -1,0 +1,42 @@
+name: redi-control-showcase-demo
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: redi_control_demo
+      POSTGRES_USER: redi_demo_admin
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Local demo password is required}
+    ports:
+      - "127.0.0.1:54348:5432"
+    tmpfs:
+      - /var/lib/postgresql/data:rw,noexec,nosuid
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U redi_demo_admin -d redi_control_demo"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  object-storage:
+    build:
+      context: .
+      dockerfile: apps/storage/Dockerfile
+    environment:
+      LOCAL_STORAGE_ROOT: /data/objects
+      LOCAL_STORAGE_HOST: 0.0.0.0
+      LOCAL_STORAGE_SIGNING_SECRET: ${LOCAL_STORAGE_SIGNING_SECRET:?Local demo signing secret is required}
+      LOCAL_STORAGE_PORT: 3010
+      MEDIA_MAX_OBJECT_BYTES: 536870912
+    ports:
+      - "127.0.0.1:8789:3010"
+    tmpfs:
+      - /data/objects:rw,noexec,nosuid
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "wget -q -O - http://127.0.0.1:3010/health/ready >/dev/null",
+        ]
+      interval: 2s
+      timeout: 3s
+      retries: 20

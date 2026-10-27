@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "identity": {
+    "name": "Aurora Media",
+    "publicationIdentity": "Aurora Media",
+    "tagline": "E vërteta. Thjesht. Për të gjithë.",
+    "locale": "sq-AL",
+    "country": "AL",
+    "region": "Shqipëri, Kosovë dhe diaspora shqiptare",
+    "audience": "Publiku i përgjithshëm shqipfolës"
+  },
+  "editorialConfig": {
+    "sections": [
+      {
+        "slug": "aktualitet-shqiperi-kosove",
+        "name": "Aktualitet Shqipëri/Kosovë",
+        "priority": 100,
+        "enabled": true,
+        "satire": false
+      },
+      {
+        "slug": "bote",
+        "name": "Botë",
+        "priority": 90,
+        "enabled": true,
+        "satire": false
+      },
+      {
+        "slug": "shqiptaret-ne-mediat-nderkombetare",
+        "name": "Shqipëria dhe shqiptarët në mediat ndërkombëtare",
+        "priority": 85,
+        "enabled": true,
+        "satire": false
+      },
+      {
+        "slug": "shqiptare-te-suksesshem",
+        "name": "Shqiptarë të suksesshëm në botë",
+        "priority": 80,
+        "enabled": true,
+        "satire": false
+      },
+      {
+        "slug": "teknologji-ai",
+        "name": "Teknologji & AI",
+        "priority": 85,
+        "enabled": true,
+        "satire": false
+      },
+      {
+        "slug": "shkence-e-ardhmja",
+        "name": "Shkencë & E Ardhmja",
+        "priority": 80,
+        "enabled": true,
+        "satire": false
+      },
+      {
+        "slug": "realitet-kuriozitete",
+        "name": "Realitet & Kuriozitete",
+        "priority": 70,
+        "enabled": true,
+        "satire": false
+      },
+      {
+        "slug": "histori-njerezore",
+        "name": "Histori njerëzore të jashtëzakonshme",
+        "priority": 75,
+        "enabled": true,
+        "satire": false
+      },
+      {
+        "slug": "a-e-dije",
+        "name": "A e dije?",
+        "priority": 65,
+        "enabled": true,
+        "satire": false
+      },
+      {
+        "slug": "esenca-e-dites",
+        "name": "Esenca e Ditës — Satirë",
+        "priority": 0,
+        "enabled": false,
+        "satire": true
+      }
+    ],
+    "topicPriorities": [
+      { "topic": "Ndikim real te publiku", "priority": 100 },
+      { "topic": "Ngjarje të rëndësishme dhe të fundit", "priority": 95 },
+      { "topic": "Histori interesante dhe të verifikueshme", "priority": 85 }
+    ],
+    "style": {
+      "tone": ["i pastër", "natyral", "i saktë", "pa sensacionalizëm"],
+      "readability": "general",
+      "headlineMaxCharacters": 110,
+      "headlineRules": [
+        "Titulli nuk tejkalon evidencën",
+        "Pa clickbait",
+        "Ndaj qartë faktin nga pasiguria"
+      ],
+      "articleMinWords": 300,
+      "articleMaxWords": 1400,
+      "terminologyRules": [
+        "Shpjego terminologjinë teknike",
+        "Përdor fjali të shkurtra",
+        "Shpjego shkencën dhe teknologjinë për lexuesin e zakonshëm",
+        "Mos shfaq UUID, claim ID, source ID ose shënime të brendshme në tekstin për lexuesin",
+        "Ruaj emrat e përveçëm sipas burimit; përkthe vetëm emërtimet që kanë një formë të qartë shqipe",
+        "Shkruaj titullin, trupin, pikat, etiketat dhe tekstet sociale në shqip natyral"
+      ],
+      "languageQuality": {
+        "targetLocale": "sq-AL",
+        "forbidInternalIdentifiers": true,
+        "namedEntityPolicy": "preserve_source_spelling",
+        "forbiddenTerms": [
+          "claimId",
+          "sourceId",
+          "Polilit Jugor",
+          "Kërcëllima e Elefantit",
+          "sekuestrohet orbita",
+          "shifrimi i borxhit",
+          "ekspozita e borxhit"
+        ],
+        "glossary": [
+          {
+            "sourceTerm": "Moon's south pole",
+            "preferredTerm": "poli jugor i Hënës",
+            "forbiddenAlternatives": ["Polilit Jugor", "Poli Jugor i Tokës"]
+          },
+          {
+            "sourceTerm": "Elephant's Trunk Nebula",
+            "preferredTerm": "Mjegullnaja Trungu i Elefantit",
+            "forbiddenAlternatives": ["Kërcëllima e Elefantit"]
+          },
+          {
+            "sourceTerm": "orbit boost",
+            "preferredTerm": "ngritje e orbitës",
+            "forbiddenAlternatives": ["sekuestrohet", "sekuestrim orbital"]
+          },
+          {
+            "sourceTerm": "federal debt",
+            "preferredTerm": "borxhi federal",
+            "forbiddenAlternatives": ["shifrimi", "ekspozita e borxhit"]
+          }
+        ],
+        "editorialExamples": [
+          "Shkencëtarët po shqyrtojnë nëse mikrobet mund të mbijetojnë pranë polit jugor të Hënës.",
+          "Misioni synon ngritjen e sigurt të orbitës së satelitit, jo ndryshimin e objektivit shkencor.",
+          "Të dhënat janë paraprake; përfundimi mbetet i pasigurt derisa të ketë verifikim të pavarur."
+        ]
+      }
+    },
+    "verification": {
+      "strict": true,
+      "allowUnverifiedAsConfirmed": false,
+      "requirePrimaryForImportant": true,
+      "independentCrossChecks": 1,
+      "checkNamesNumbersDatesLocationsInstitutions": true,
+      "scientific": {
+        "requireOriginalSource": true,
+        "requireInstitution": true,
+        "distinguishPeerReview": true,
+        "requireLimitations": true,
+        "distinguishStudySubject": true
+      }
+    },
+    "sourceRequirements": {
+      "acceptedTiers": ["primary", "strong_reporting"],
+      "seriousCrossCheckForImportant": true
+    },
+    "freshness": { "freshHours": 36, "staleHours": 120, "discloseStale": true },
+    "destinations": { "website": true, "facebook": true, "instagram": true },
+    "visual": {
+      "family": "Aurora Media editorial",
+      "categoryThemes": {
+        "Teknologji & AI": "teal-future",
+        "Shkencë & E Ardhmja": "blue-science",
+        "Aktualitet Shqipëri/Kosovë": "red-current"
+      },
+      "cardHeadlineMaxCharacters": 72,
+      "supportingFactsMax": 3,
+      "requireSourceAttribution": true,
+      "fullCaptionInsideImage": false,
+      "realPeoplePolicy": "licensed_photo_or_thematic_graphic",
+      "generatedImageDisclosure": true
+    },
+    "approval": {
+      "humanReviewRequired": true,
+      "publishPermissionRequired": true
+    },
+    "publishing": {
+      "targetsPerDay": 6,
+      "windows": ["08:00", "12:00", "17:00", "21:00"]
+    }
+  },
+  "excludedTopics": [
+    "Thashetheme",
+    "Clickbait pa vlerë",
+    "Përditësime të ngushta vetëm për zhvillues"
+  ],
+  "restrictedTopics": [
+    "Satirë automatike",
+    "Pretendime të paverifikuara si fakt"
+  ]
+}

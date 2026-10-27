@@ -1,0 +1,18 @@
+{
+  "name": "@redi-control/website-control",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "tsc -b --clean"
+  },
+  "dependencies": {
+    "@redi-control/connector-sdk": "*",
+    "zod": "4.6.7"
+  }
+}

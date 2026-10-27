@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:05,000
+Eine Redaktion. Klare Grenzen.
+
+2
+00:00:05,000 --> 00:00:10,000
+Recherche bewahrt Quellen und Belegkontext.
+
+3
+00:00:10,000 --> 00:00:15,000
+Eine Geschichte, unabhängige Kanalvarianten.
+
+4
+00:00:15,000 --> 00:00:20,000
+Entwürfe bleiben von der Ausführung getrennt.
+
+5
+00:00:20,000 --> 00:00:25,000
+Menschliche Freigabe gilt der konkreten Version.
+
+6
+00:00:25,000 --> 00:00:30,000
+Redaktionsarbeit planen, ohne live zu publizieren.
+
+7
+00:00:30,000 --> 00:00:35,000
+Preflight zeigt offene und blockierende Bedingungen.
+
+8
+00:00:35,000 --> 00:00:40,000
+Mandantenbezogener Zugriff und klare Teamrollen.
+
+9
+00:00:40,000 --> 00:00:45,000
+Arbeit über einen kontrollierten Prozess verfolgen.

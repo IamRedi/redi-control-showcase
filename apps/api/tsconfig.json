@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": { "rootDir": "src", "outDir": "dist" },
+  "references": [
+    { "path": "../../packages/config" },
+    { "path": "../../packages/ai-gateway" },
+    { "path": "../../packages/connector-sdk" },
+    { "path": "../../packages/core" },
+    { "path": "../../packages/database" },
+    { "path": "../../packages/evidence-intelligence" },
+    { "path": "../../packages/identity" },
+    { "path": "../../packages/installation" },
+    { "path": "../../packages/media-social" },
+    { "path": "../../packages/media-intelligence" },
+    { "path": "../../packages/unified-content" },
+    { "path": "../../packages/video-intelligence" },
+    { "path": "../../packages/website-control" },
+    { "path": "../../packages/source-ingestion" }
+  ],
+  "include": ["src/**/*.ts"]
+}

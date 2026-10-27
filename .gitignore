@@ -1,0 +1,56 @@
+node_modules/
+.pilot-6p-results.json
+.pilot-6p-results-*.json
+.pilot-6p-*.json
+.next/
+dist/
+coverage/
+.cache/
+.turbo/
+playwright-report/
+test-results/
+tmp/
+temp/
+*.tsbuildinfo
+
+# Environment and local machine configuration
+.env
+.env.*
+!.env.example
+!.env.staging.example
+!deploy/production/.env.example
+!deploy/production/runtime.env.example
+!deploy/cloudflare-tunnel/.env.example
+/deploy/production/runtime.env
+.envrc
+.direnv/
+.npmrc
+.yarnrc.yml
+.idea/
+.vscode/
+*.local
+
+# Credentials, signing material, and private keys
+secrets/
+.secrets/
+credentials*.json
+service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Operating-system and application logs
+.DS_Store
+Thumbs.db
+*.log
+
+# Local evaluation artifacts, never publication inputs
+.showcase/
+playwright-report/
+test-results/
+.env
+.env.local
+*.log

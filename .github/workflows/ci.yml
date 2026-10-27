@@ -1,0 +1,82 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  secrets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install checksum-pinned Gitleaks
+        run: |
+          curl --fail --location --retry 3 -o "$RUNNER_TEMP/gitleaks.tgz" https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz
+          echo "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb  $RUNNER_TEMP/gitleaks.tgz" | sha256sum --check
+          tar -xzf "$RUNNER_TEMP/gitleaks.tgz" -C "$RUNNER_TEMP" gitleaks
+      - name: Scan non-empty complete history and tracked snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-list --all --count)" -ge 1
+          "$RUNNER_TEMP/gitleaks" git . --config .gitleaks.toml --redact --no-banner --log-opts="--all --full-history" 2>&1 | tee "$RUNNER_TEMP/gitleaks.log"
+          ! grep -Eq 'ERR|0 commits scanned|scanned ~0 bytes' "$RUNNER_TEMP/gitleaks.log"
+          grep -Eq '[1-9][0-9]* commits scanned' "$RUNNER_TEMP/gitleaks.log"
+          mkdir "$RUNNER_TEMP/snapshot"
+          git archive HEAD | tar -x -C "$RUNNER_TEMP/snapshot"
+          "$RUNNER_TEMP/gitleaks" dir "$RUNNER_TEMP/snapshot" --config .gitleaks.toml --redact --no-banner
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_DB: rc_showcase_tests
+          POSTGRES_USER: postgres
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d rc_showcase_tests"
+          --health-interval 2s
+          --health-timeout 3s
+          --health-retries 20
+    env:
+      DATABASE_ADMIN_URL: postgresql://postgres@127.0.0.1:5432/rc_showcase_tests
+      DATABASE_URL: postgresql://redi_control_runtime@127.0.0.1:5432/rc_showcase_tests
+      DATABASE_AUTH_URL: postgresql://redi_control_auth@127.0.0.1:5432/rc_showcase_tests
+      SESSION_COOKIE_SECURE: "false"
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.23.4
+          cache: npm
+      - name: Generate ephemeral role passwords
+        shell: bash
+        run: |
+          for name in DATABASE_RUNTIME_PASSWORD DATABASE_AUTH_PASSWORD; do
+            value=$(openssl rand -hex 32)
+            echo "::add-mask::$value"
+            echo "$name=$value" >> "$GITHUB_ENV"
+          done
+      - run: npm ci
+      - run: npm run security:secrets
+      - run: npm run showcase:verify
+      - run: npm run check
+      - run: npm run test:integration
+        env:
+          NODE_OPTIONS: --import=./scripts/showcase-offline.mjs
+      - run: npm run showcase:offline-check
+      - run: npm audit
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:showcase
+      - run: npm run check:production
+      - run: npm run check:containers

@@ -1,0 +1,11 @@
+.showcase-notice {
+  padding: 9px 18px;
+  background: #19252b;
+  border-bottom: 1px solid #3b5964;
+  color: #b9e7e7;
+  text-align: center;
+  font:
+    600 11px/1.5 system-ui,
+    sans-serif;
+  letter-spacing: 0.05em;
+}

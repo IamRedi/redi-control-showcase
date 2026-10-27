@@ -1,0 +1,10 @@
+[Unit]
+Description=Run the REDI CONTROL encrypted PostgreSQL backup daily
+
+[Timer]
+OnCalendar=*-*-* 03:20:00
+Persistent=true
+Unit=redi-control-backup.service
+
+[Install]
+WantedBy=timers.target

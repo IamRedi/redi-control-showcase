@@ -1,0 +1,32 @@
+{
+  "$schema": "./schema.json",
+  "brand": {
+    "name": "REDI CONTROL",
+    "logoPath": null,
+    "faviconPath": null,
+    "colors": {
+      "primary": "#6d5dfc",
+      "background": "#07101f",
+      "surface": "#0d1829"
+    },
+    "fontFamily": "Inter, ui-sans-serif, system-ui, sans-serif"
+  },
+  "locales": ["en", "de", "sq"],
+  "availableLocales": ["en", "de", "sq", "it"],
+  "defaultLocale": "en",
+  "modules": {
+    "platforms": false,
+    "websites": false,
+    "social": false,
+    "contextStudio": false,
+    "aiCommandCenter": false,
+    "automations": false
+  },
+  "legal": {
+    "privacyUrl": null,
+    "termsUrl": null
+  },
+  "support": {
+    "email": null
+  }
+}

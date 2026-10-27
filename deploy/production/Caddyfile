@@ -1,0 +1,37 @@
+{
+	email {$ACME_EMAIL}
+	admin off
+}
+
+https://{$REDI_DOMAIN} {
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		-Server
+	}
+
+	@identity path /id /id/*
+	reverse_proxy @identity keycloak:8080 {
+		header_up X-Forwarded-Proto https
+	}
+
+	@control path /api/* /auth/* /health/*
+	reverse_proxy @control api:3001
+	reverse_proxy web:3000
+
+	log {
+		output stdout
+		format json
+	}
+}
+
+http://{$REDI_DOMAIN} {
+	redir https://{$REDI_DOMAIN}{uri} permanent
+}
+
+:80 {
+	respond 421
+}

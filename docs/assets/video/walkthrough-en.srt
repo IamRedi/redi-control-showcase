@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:05,000
+One newsroom. Explicit boundaries.
+
+2
+00:00:05,000 --> 00:00:10,000
+Research cases retain source and evidence context.
+
+3
+00:00:10,000 --> 00:00:15,000
+One story, independent channel variants.
+
+4
+00:00:15,000 --> 00:00:20,000
+Drafts remain separate from provider execution.
+
+5
+00:00:20,000 --> 00:00:25,000
+Human review is tied to the exact revision.
+
+6
+00:00:25,000 --> 00:00:30,000
+Plan editorial work without a live publication.
+
+7
+00:00:30,000 --> 00:00:35,000
+Preflight exposes blocked or pending conditions.
+
+8
+00:00:35,000 --> 00:00:40,000
+Tenant-scoped access and explicit team roles.
+
+9
+00:00:40,000 --> 00:00:45,000
+Track work through a governed control plane.

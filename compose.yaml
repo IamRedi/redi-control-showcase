@@ -1,0 +1,46 @@
+name: redi-control
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-redi_control}
+      POSTGRES_USER: ${POSTGRES_USER:-redi_control_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in your shell or ignored .env file}
+    ports:
+      - "${POSTGRES_PORT:-54329}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - redi_control_postgres:/var/lib/postgresql/data
+
+  object-storage:
+    build:
+      context: .
+      dockerfile: apps/storage/Dockerfile
+    environment:
+      LOCAL_STORAGE_ROOT: /data/objects
+      LOCAL_STORAGE_HOST: 0.0.0.0
+      LOCAL_STORAGE_SIGNING_SECRET: ${LOCAL_STORAGE_SIGNING_SECRET:?Set LOCAL_STORAGE_SIGNING_SECRET in your shell or ignored .env file}
+      LOCAL_STORAGE_PORT: 3010
+      MEDIA_MAX_OBJECT_BYTES: ${MEDIA_MAX_OBJECT_BYTES:-536870912}
+    ports:
+      - "${LOCAL_STORAGE_PORT:-3010}:3010"
+    volumes:
+      - redi_control_objects:/data/objects
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "wget -q -O - http://127.0.0.1:3010/health/ready >/dev/null",
+        ]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  redi_control_postgres:
+  redi_control_objects:

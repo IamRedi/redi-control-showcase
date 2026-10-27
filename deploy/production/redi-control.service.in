@@ -1,0 +1,22 @@
+[Unit]
+Description=REDI CONTROL production Compose stack
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+Conflicts=redi-control-openbao-bootstrap.service
+
+[Service]
+Type=simple
+WorkingDirectory=@DEPLOYMENT_DIRECTORY@
+LoadCredentialEncrypted=openbao_unseal_key:/etc/credstore.encrypted/openbao_unseal_key
+Environment=REDI_OPENBAO_UNSEAL_KEY_FILE=%d/openbao_unseal_key
+ExecStartPre=/usr/bin/docker compose --env-file .env -f compose.yaml up -d --force-recreate openbao
+ExecStart=/usr/bin/docker compose --env-file .env -f compose.yaml up --remove-orphans
+ExecStop=/usr/bin/docker compose --env-file .env -f compose.yaml stop
+Restart=on-failure
+RestartSec=10s
+TimeoutStartSec=0
+TimeoutStopSec=2min
+
+[Install]
+WantedBy=multi-user.target

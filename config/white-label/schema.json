@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redi-control.invalid/schemas/white-label-v1.json",
+  "title": "REDI CONTROL white-label configuration v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "brand",
+    "locales",
+    "availableLocales",
+    "defaultLocale",
+    "modules",
+    "legal",
+    "support"
+  ],
+  "properties": {
+    "brand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "logoPath", "faviconPath", "colors", "fontFamily"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "logoPath": { "type": ["string", "null"] },
+        "faviconPath": { "type": ["string", "null"] },
+        "colors": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["primary", "background", "surface"],
+          "properties": {
+            "primary": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+            "background": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+            "surface": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" }
+          }
+        },
+        "fontFamily": { "type": "string", "minLength": 1 }
+      }
+    },
+    "locales": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "enum": ["en", "de", "sq"] }
+    },
+    "availableLocales": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "enum": ["en", "de", "sq", "it"] }
+    },
+    "defaultLocale": { "type": "string", "enum": ["en", "de", "sq"] },
+    "modules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "platforms",
+        "websites",
+        "social",
+        "contextStudio",
+        "aiCommandCenter",
+        "automations"
+      ],
+      "properties": {
+        "platforms": { "type": "boolean" },
+        "websites": { "type": "boolean" },
+        "social": { "type": "boolean" },
+        "contextStudio": { "type": "boolean" },
+        "aiCommandCenter": { "type": "boolean" },
+        "automations": { "type": "boolean" }
+      }
+    },
+    "legal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["privacyUrl", "termsUrl"],
+      "properties": {
+        "privacyUrl": { "type": ["string", "null"], "format": "uri" },
+        "termsUrl": { "type": ["string", "null"], "format": "uri" }
+      }
+    },
+    "support": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["email"],
+      "properties": {
+        "email": { "type": ["string", "null"], "format": "email" }
+      }
+    }
+  }
+}

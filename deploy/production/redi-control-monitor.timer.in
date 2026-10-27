@@ -1,0 +1,11 @@
+[Unit]
+Description=Run the REDI CONTROL local production monitor every five minutes
+
+[Timer]
+OnBootSec=10min
+OnUnitActiveSec=5min
+Persistent=true
+Unit=redi-control-monitor.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,17 @@
+[Unit]
+Description=REDI CONTROL OpenBao bootstrap service
+Requires=docker.service
+After=docker.service
+Conflicts=redi-control.service
+
+[Service]
+Type=simple
+WorkingDirectory=@DEPLOYMENT_DIRECTORY@
+LoadCredentialEncrypted=openbao_unseal_key:/etc/credstore.encrypted/openbao_unseal_key
+Environment=REDI_OPENBAO_UNSEAL_KEY_FILE=%d/openbao_unseal_key
+ExecStart=/usr/bin/docker compose --env-file .env -f compose.yaml up --force-recreate openbao
+ExecStop=/usr/bin/docker compose --env-file .env -f compose.yaml stop openbao
+Restart=on-failure
+RestartSec=10s
+TimeoutStartSec=0
+TimeoutStopSec=2min

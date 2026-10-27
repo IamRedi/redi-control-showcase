@@ -1,0 +1,78 @@
+name: redi-control-staging
+
+services:
+  migrate:
+    image: ${REDI_MIGRATE_IMAGE:?Set immutable migration image}
+    restart: "no"
+    env_file: ${STAGING_ENV_FILE:-.env.staging}
+    environment:
+      DATABASE_ADMIN_URL_FILE: /run/secrets/database_admin_url
+      DATABASE_RUNTIME_PASSWORD_FILE: /run/secrets/database_runtime_password
+      DATABASE_AUTH_PASSWORD_FILE: /run/secrets/database_auth_password
+    secrets:
+      - database_admin_url
+      - database_runtime_password
+      - database_auth_password
+
+  api:
+    image: ${REDI_API_IMAGE:?Set immutable API image}
+    restart: unless-stopped
+    env_file: ${STAGING_ENV_FILE:-.env.staging}
+    environment:
+      DATABASE_URL_FILE: /run/secrets/database_runtime_url
+      DATABASE_AUTH_URL_FILE: /run/secrets/database_auth_url
+      OIDC_CLIENT_SECRET_FILE: /run/secrets/oidc_client_secret
+      OIDC_TRANSACTION_ENCRYPTION_KEY_FILE: /run/secrets/oidc_transaction_key
+    secrets:
+      - database_runtime_url
+      - database_auth_url
+      - oidc_client_secret
+      - oidc_transaction_key
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    ports: ["127.0.0.1:3001:3001"]
+    healthcheck:
+      test:
+        ["CMD", "wget", "-q", "-O", "-", "http://127.0.0.1:3001/health/ready"]
+      interval: 10s
+      timeout: 3s
+      retries: 12
+
+  worker:
+    image: ${REDI_WORKER_IMAGE:?Set immutable worker image}
+    restart: unless-stopped
+    env_file: ${STAGING_ENV_FILE:-.env.staging}
+    environment:
+      DATABASE_URL_FILE: /run/secrets/database_runtime_url
+    secrets:
+      - database_runtime_url
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    stop_grace_period: 30s
+
+  web:
+    image: ${REDI_WEB_IMAGE:?Set immutable web image}
+    restart: unless-stopped
+    env_file: ${STAGING_ENV_FILE:-.env.staging}
+    depends_on:
+      api:
+        condition: service_healthy
+    ports: ["127.0.0.1:3000:3000"]
+
+secrets:
+  database_admin_url:
+    external: true
+  database_runtime_password:
+    external: true
+  database_auth_password:
+    external: true
+  database_runtime_url:
+    external: true
+  database_auth_url:
+    external: true
+  oidc_client_secret:
+    external: true
+  oidc_transaction_key:
+    external: true

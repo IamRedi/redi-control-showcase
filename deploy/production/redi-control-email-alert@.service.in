@@ -1,0 +1,9 @@
+[Unit]
+Description=Send REDI CONTROL email alert for %I
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=@DEPLOYMENT_DIRECTORY@
+ExecStart="@DEPLOYMENT_DIRECTORY@/send-alert-email.sh" %I

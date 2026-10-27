@@ -1,0 +1,8 @@
+.next
+dist
+coverage
+node_modules
+package-lock.json
+redi_control_codex_starter_pack
+# Frozen vendor input: checked byte-for-byte by verify-rws-standard.mjs instead.
+docs/standards/REDION_WORK_STANDARD-v0.1.0-draft.md
